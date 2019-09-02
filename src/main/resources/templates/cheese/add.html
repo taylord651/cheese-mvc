@@ -10,15 +10,25 @@
 
     <form method="post" style="max-width:600px" th:object="${cheese}">
         <div class="form-group">
-            <label th:for="name">Name:</label>
+            <label th:for="name"><strong>Name:</strong></label>
             <input class="form-control" th:field="*{name}"/>
             <span th:errors="*{name}" class="error"></span>
         </div>
         <div class="form-group">
-            <label th:for="description">Description:</label>
+            <label th:for="description"><strong>Description:</strong></label>
             <textarea class="form-control" th:field="*{description}"></textarea>
             <span th:errors="*{description}" class="error"></span>
         </div>
+        <div class="form-group">
+            <label th:for="type"><strong>Type:</strong></label>
+            <select class="form-control" th:field="*{type}">
+                <option th:each="cheeseType : ${cheeseTypes}"
+                        th:text="${cheeseType.name}"
+                        th:value="${cheeseType}"></option>
+            </select>
+        </div>
+
+
         <input type="submit" value="Add Cheese" class="form-control" style="max-width:120px"/>
     </form>
 

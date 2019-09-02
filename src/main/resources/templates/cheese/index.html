@@ -16,12 +16,14 @@
             <tr>
                 <th>Name</th>
                 <th>Description</th>
+                <th>Type</th>
             </tr>
         </thead>
         <tbody>
             <tr th:each="cheeseItem : ${cheeses}">
                 <td th:text="${cheeseItem.name}">Key</td>
                 <td th:text="${cheeseItem.description}">Value</td>
+                <td th:text="${cheeseItem.type.name}"></td>
             </tr>
         </tbody>
     </table>

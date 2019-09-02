@@ -15,6 +15,7 @@ public class Cheese {
     @Size(min=1, message = "Description must not be empty")
     private String description;
 
+    private CheeseType type;
 
     // Unique number to identify each object created from the cheese class
     // Allow us to delete a cheese object even if it share its name with another object
@@ -55,5 +56,13 @@ public class Cheese {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public CheeseType getType() {
+        return type;
+    }
+
+    public void setType(CheeseType type) {
+        this.type = type;
     }
 }
