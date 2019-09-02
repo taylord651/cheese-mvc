@@ -2,20 +2,21 @@
 
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
-<body>
+<body class="container">
 
     <h1 th:text="${title}">Default Title</h1>
 
     <nav th:replace="fragments :: navigation"></nav>
 
-    <form method="post">
-        <label id="cheeseName" for="cheeseName">Name:</label>
-        <br>
-        <input type="text" name="cheeseName" />
-        <br>
-        <label id="description" for="description">Description:</label>
-        <br>
-        <textarea name="description"></textarea>
+    <form method="post" style="max-width:600px">
+        <div class="form-group">
+            <label for="cheeseName">Name:</label>
+            <input class="form-control" id="cheeseName" type="text" name="cheeseName" />
+        </div>
+        <div>
+            <label for="description">Description:</label>
+            <textarea class="form-control" id="description" name="description"></textarea>
+        </div>
         <br>
         <input type="submit" value="Add Cheese" />
     </form>
