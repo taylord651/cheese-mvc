@@ -1,10 +1,18 @@
 package org.launchcode.cheesemvc.models;
 
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 //Replaces string item in controller to store data
 public class Cheese {
 
+    @NotNull
+    @Size(min=3, max=15, message = "Name must be between 3 and 15 characters")
     private String name;
+
+    @NotNull
+    @Size(min=1, message = "Description must not be empty")
     private String description;
 
 
